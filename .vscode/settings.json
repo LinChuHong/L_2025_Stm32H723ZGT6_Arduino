@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "delay.h": "c",
+        "usart.h": "c",
+        "sys.h": "c",
+        "malloc.h": "c",
+        "lv_demo_benchmark.h": "c",
+        "lvgl_private.h": "c"
+    }
+}
