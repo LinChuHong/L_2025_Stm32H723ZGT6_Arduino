@@ -6,6 +6,7 @@
         "malloc.h": "c",
         "lv_demo_benchmark.h": "c",
         "lvgl_private.h": "c",
-        "l_malloc1.h": "c"
+        "l_malloc1.h": "c",
+        "freertosconfig_default.h": "c"
     }
 }

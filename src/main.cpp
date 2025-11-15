@@ -30,7 +30,8 @@ std::map<std::string, OneButton> myButton1;
 #include <screens/screen_animations_gen.h>
 #include <ui.h>
 
-
+__attribute__((section(".sdram")))
+uint8_t ucHeap[1024*1024];
 
 void mycb(lv_event_t *e)
 {
@@ -84,10 +85,10 @@ void setup() {
 	lv_init();                              /* lvgl系统初始化 */
     lv_port_disp_init();                    /* lvgl显示接口初始化,放在lv_init()的后面 */
     lv_port_indev_init();                   /* lvgl输入接口初始化,放在lv_init()的后面 */
-    // lv_obj_t * ob = screen_animations_create();
-    // lv_screen_load(ob);
+    lv_obj_t * ob = screen_animations_create();
+    lv_screen_load(ob);
     // lv_demo_stress();
-    lv_demo_benchmark();
+    // lv_demo_benchmark();
     // lv_demo_music();
     // lv_demo_widgets();
     
