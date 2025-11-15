@@ -5,6 +5,7 @@
         "sys.h": "c",
         "malloc.h": "c",
         "lv_demo_benchmark.h": "c",
-        "lvgl_private.h": "c"
+        "lvgl_private.h": "c",
+        "l_malloc1.h": "c"
     }
 }

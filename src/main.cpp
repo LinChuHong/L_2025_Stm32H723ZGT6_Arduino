@@ -13,14 +13,37 @@ OneButton myButton;
 #include <lcd.h>
 #include <key.h>
 #include <touch.h>
-#include <malloc.h>
-#include <xtimer.h>
+#include <L_malloc1.h>
 
 #include <lvgl.h>
 #include <demos/lv_demos.h>
 #include <examples/lv_examples.h>
 #include <lv_port_disp.h>
 #include <lv_port_indev.h>
+
+#include <map>
+#include <string>
+std::map<std::string, OneButton> myButton1;
+
+
+#include <screens/screen_animations_gen.h>
+#include <ui.h>
+
+
+
+void mycb(lv_event_t *e)
+{
+    const char *name = (const char *) lv_event_get_user_data(e);
+    if (lv_event_get_code(e) == LV_EVENT_PRESSING)
+    {
+        if (name == "ledon")
+        {
+            Serial.println("hello, world");
+        }
+
+    }
+
+}
 
 // // put function declarations here:
 int myFunction(int, int);
@@ -50,21 +73,22 @@ void setup() {
     key_init();                             /* 初始化按键 */
     lcd_init();                             /* 初始化LCD */
 
-    
-
     my_mem_init(SRAMIN);                    /* 初始化内部内存池(AXI) */
     my_mem_init(SRAMEX);                    /* 初始化外部内存池(SDRAM) */
     my_mem_init(SRAMDTCM);                  /* 初始化DTCM内存池(DTCM) */
     my_mem_init(SRAMITCM);                  /* 初始化ITCM内存池(ITCM) */
-	
+
+    // myButton1.insert( { "button1",OneButton() } );
+	// myButton1.at("button1").setup(PC1,INPUT_PULLDOWN,false);
 	lv_init();                              /* lvgl系统初始化 */
     lv_port_disp_init();                    /* lvgl显示接口初始化,放在lv_init()的后面 */
     lv_port_indev_init();                   /* lvgl输入接口初始化,放在lv_init()的后面 */
-    
+    lv_obj_t * ob = screen_animations_create();
+    lv_screen_load(ob);
     // lv_demo_stress();
     // lv_demo_benchmark();
     // lv_demo_music();
-    lv_demo_widgets();
+    // lv_demo_widgets();
     
     // pinMode(PB1,OUTPUT);
     // pinMode(PB0,OUTPUT);
@@ -73,13 +97,14 @@ void setup() {
     
     // // Serial.println("Hello, world");
     mytimer.setOverflow(1000,MICROSEC_FORMAT);
-    
-    mytimer.attachInterrupt( [] {   lv_tick_inc(1); /*lvgl的1ms心跳*/ } );
+    mytimer.attachInterrupt( [] { lv_tick_inc(1); } );
     mytimer.resume();
+    // myButton1.at("button1").attachPress( [] { printf("button1 pressed-> %0.10f",69.6969696969); } );
     // myButton.setup(PC1,INPUT_PULLDOWN,false);
     // myButton.attachClick( whatisgoingon );
 
     Serial.println("hello, world");
+    // L_FreeRTOS::SetUp::setup();
 }
 
 
@@ -87,21 +112,21 @@ void loop()
 {
     
 
-    if (Serial.available())
-    {
-        String str = Serial.readStringUntil('\n');
-        if (str == "test")
-        {
-            uint32_t start = millis();
-            while (millis() - start < 4000)
-            {
-            }
-            Serial.println((millis() - start) / 1000.0,6);
+    // if (Serial.available())
+    // {
+    //     String str = Serial.readStringUntil('\n');
+    //     if (str == "test")
+    //     {
+    //         uint32_t start = millis();
+    //         while (millis() - start < 4000)
+    //         {
+    //         }
+    //         Serial.println((millis() - start) / 1000.0,6);
 
-        }
-    }
+    //     }
+    // }
     lv_timer_handler();
-    delay(5);
+    // myButton1.at("button1").tick();
  
 }
 

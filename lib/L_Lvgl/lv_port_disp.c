@@ -20,7 +20,7 @@
  *********************/
 #define USE_SRAM        1       /* 使用外部SRAM为1，否则为0 */
 #ifdef USE_SRAM
-#include "malloc.h"
+#include <L_malloc1.h>
 #endif
 
 #define MY_DISP_HOR_RES    1024   /* 屏幕宽度 */

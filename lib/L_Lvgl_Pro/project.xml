@@ -1,0 +1,7 @@
+<project name="ui">
+	<targets>
+		<target name="target1">
+			<display width="1024" height="600" />
+		</target>
+	</targets>
+</project>
