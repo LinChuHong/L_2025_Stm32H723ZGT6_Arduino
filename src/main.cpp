@@ -21,6 +21,7 @@ OneButton myButton;
 #include <lv_port_disp.h>
 #include <lv_port_indev.h>
 
+#include <L_FreeRTOS.h>
 #include <map>
 #include <string>
 std::map<std::string, OneButton> myButton1;
@@ -83,10 +84,10 @@ void setup() {
 	lv_init();                              /* lvgl系统初始化 */
     lv_port_disp_init();                    /* lvgl显示接口初始化,放在lv_init()的后面 */
     lv_port_indev_init();                   /* lvgl输入接口初始化,放在lv_init()的后面 */
-    lv_obj_t * ob = screen_animations_create();
-    lv_screen_load(ob);
+    // lv_obj_t * ob = screen_animations_create();
+    // lv_screen_load(ob);
     // lv_demo_stress();
-    // lv_demo_benchmark();
+    lv_demo_benchmark();
     // lv_demo_music();
     // lv_demo_widgets();
     
@@ -104,7 +105,7 @@ void setup() {
     // myButton.attachClick( whatisgoingon );
 
     Serial.println("hello, world");
-    // L_FreeRTOS::SetUp::setup();
+    L_FreeRTOS::SetUp::setup();
 }
 
 
@@ -125,7 +126,7 @@ void loop()
 
     //     }
     // }
-    lv_timer_handler();
+    // lv_timer_handler();
     // myButton1.at("button1").tick();
  
 }

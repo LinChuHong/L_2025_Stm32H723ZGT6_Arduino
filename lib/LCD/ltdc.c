@@ -26,7 +26,9 @@ DMA2D_HandleTypeDef g_dma2d_handle;      /* DMA2D句柄 */
 #if LTDC_PIXFORMAT == LTDC_PIXFORMAT_ARGB8888 || LTDC_PIXFORMAT == LTDC_PIXFORMAT_RGB888
     uint32_t ltdc_lcd_framebuf[1280][800] __attribute__((at(LTDC_FRAME_BUF_ADDR)));   /* 定义最大屏分辨率时,LTDC所需的帧缓存数组大小 */
 #else
-__attribute__((section(".sdram")))  uint16_t ltdc_lcd_framebuf[1280][800] __attribute__((at(LTDC_FRAME_BUF_ADDR + 1280 * 800 * 2)));   /* 定义最大屏分辨率时,LTDC所需的帧缓存数组大小 */
+// __attribute__((section(".sdram")))  uint16_t ltdc_lcd_framebuf[1280][800] __attribute__((at(LTDC_FRAME_BUF_ADDR + 1280 * 800 * 2)));   /* 定义最大屏分辨率时,LTDC所需的帧缓存数组大小 */
+__attribute__((section(".sdram")))  
+uint16_t ltdc_lcd_framebuf[1280][800];   /* 定义最大屏分辨率时,LTDC所需的帧缓存数组大小 */
 // uint16_t ltdc_lcd_framebuf[1280][800] __attribute__((section(".sdram")));   /* 定义最大屏分辨率时,LTDC所需的帧缓存数组大小 */
 
 //    uint16_t ltdc_lcd_framebuf1[1280][800] __attribute__((at(LTDC_FRAME_BUF_ADDR + 1280 * 800 * 2))); /* 使用LTDC层2时使用（默认使用LTDC层1） */
