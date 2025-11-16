@@ -1,6 +1,7 @@
 #pragma once
 #include <Arduino.h>
 #include <STM32FreeRTOS.h>
+
 namespace L_FreeRTOS
 {
     namespace TaskManager

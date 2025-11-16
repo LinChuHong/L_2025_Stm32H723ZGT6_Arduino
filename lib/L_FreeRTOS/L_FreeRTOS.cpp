@@ -6,8 +6,10 @@
 #include <L_SDCARD.h>
 #include <lvgl.h>
 
-#include <string>
 
+#include <map>
+#include <string>
+#include <OneButton.h>
 
 namespace L_FreeRTOS
 {
@@ -45,6 +47,7 @@ namespace L_FreeRTOS
                 // {
                 //     String st = L_Serial::mySerial2.readStringUntil('\n');
                 // }
+                // myButton1.at("button1").tick();
                 vTaskDelay(pdMS_TO_TICKS(1));
             }
 
@@ -166,6 +169,11 @@ namespace L_FreeRTOS
     namespace SetUp
     {
 
+        
+        void buttonTickCallback(xTimerHandle t)
+        {
+            
+        }
         void setup()
         {
             
@@ -184,8 +192,8 @@ namespace L_FreeRTOS
         
             
             // Timer
-            // Signal::myTimer1 = xTimerCreate("T1",pdMS_TO_TICKS(10),pdTRUE,NULL,L_MyButton::buttonTickCallback);
-            // if (Signal::myTimer1 != NULL) xTimerStart(Signal::myTimer1,0); else Serial.println("Timer1 does not exit");
+            Signal::myTimer1 = xTimerCreate("T1",pdMS_TO_TICKS(10),pdTRUE,NULL,buttonTickCallback);
+            if (Signal::myTimer1 != NULL) xTimerStart(Signal::myTimer1,0); else Serial.println("Timer1 does not exit");
 
             // Serial
             Serial.begin(SERIALBAUDRATE);
@@ -198,6 +206,7 @@ namespace L_FreeRTOS
     
             
             // Button
+
 
 
 

@@ -1,0 +1,25 @@
+{
+    "name": "myLib",
+    "version": "1.0.0",
+    "build": {
+        "includeDir": ".",
+
+        "srcFilter": [
+            "-<L_Gui_Guider/lvgl/>",
+            "-<L_Gui_Guider/lib/>",
+            "-<L_Gui_Guider/lvgl-simulator/>",
+            "-<L_Gui_Guider/temp/>",
+            "+<L_Gui_Guider/custom/>",
+            "+<L_Gui_Guider/generated/>"
+
+        ],
+        "flags": [
+            "-I L_Gui_Guider/custom",
+            "-I L_Gui_Guider/generated"
+        ]
+        
+
+
+     
+    }
+}
