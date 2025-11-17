@@ -18,6 +18,7 @@
 #include <map>
 #include <string>
 #include <custom.h>
+#include <hello.h>
 
 std::map<std::string, OneButton> myButton1;
 HardwareTimer mytimer(TIM6);
@@ -47,7 +48,7 @@ void setup()
     
     myButton1.insert( { "button1", OneButton() } );
 	myButton1.at("button1").setup(PC1,INPUT_PULLDOWN,false);
-    myButton1.at("button1").attachPress( [] { Serial.println("Hello, world"); } );
+    myButton1.at("button1").attachPress( [] { sayHello(); } );
     
     L_FreeRTOS::SetUp::setup();
 }

@@ -1,0 +1,28 @@
+{
+    "name": "L_Lib",
+    "version": "1.0.0",
+    "build": {
+      "includeDir": ".",
+      "flags": [
+            "-I sys",
+            "-I delay",
+            "-I KEY",
+            "-I LCD",
+            "-I SDRAM",
+            "-I MPU",
+            "-I NORFLASH",
+            "-I L_FreeRTOS",
+            "-I QSPI",
+            "-I TOUCH",
+            "-I usart",
+            "-I USMART",
+            "-I TIME",
+            "-I MALLOC11",
+            "-I LED",
+            "-I L_lvgl_Pro",
+            "-I L_Lvgl"
+        ]
+
+     
+    }
+}
