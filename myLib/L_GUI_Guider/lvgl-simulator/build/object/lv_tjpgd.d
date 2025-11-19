@@ -633,7 +633,12 @@ build/object/lv_tjpgd.o: \
  c:\users\chuhong\onedrive\documents\platformio\projects\l_2025_stm32h723zgt6_arduino\mylib\l_gui_guider\lvgl\src/libs/ffmpeg/lv_ffmpeg.h \
  c:\users\chuhong\onedrive\documents\platformio\projects\l_2025_stm32h723zgt6_arduino\mylib\l_gui_guider\lvgl\src/widgets/lottie/lv_lottie_private.h \
  c:\users\chuhong\onedrive\documents\platformio\projects\l_2025_stm32h723zgt6_arduino\mylib\l_gui_guider\lvgl\src\lv_conf_internal.h \
- c:\users\chuhong\onedrive\documents\platformio\projects\l_2025_stm32h723zgt6_arduino\mylib\l_gui_guider\lvgl\src/osal/lv_os_private.h
+ c:\users\chuhong\onedrive\documents\platformio\projects\l_2025_stm32h723zgt6_arduino\mylib\l_gui_guider\lvgl\src/osal/lv_os_private.h \
+ c:\users\chuhong\onedrive\documents\platformio\projects\l_2025_stm32h723zgt6_arduino\mylib\l_gui_guider\lvgl\src\libs\tjpgd\tjpgd.h \
+ c:\users\chuhong\onedrive\documents\platformio\projects\l_2025_stm32h723zgt6_arduino\mylib\l_gui_guider\lvgl\src\lv_conf_internal.h \
+ c:\users\chuhong\onedrive\documents\platformio\projects\l_2025_stm32h723zgt6_arduino\mylib\l_gui_guider\lvgl\src\libs\tjpgd\tjpgdcnf.h \
+ c:\users\chuhong\onedrive\documents\platformio\projects\l_2025_stm32h723zgt6_arduino\mylib\l_gui_guider\lvgl\src\libs\tjpgd\lv_tjpgd.h \
+ c:\users\chuhong\onedrive\documents\platformio\projects\l_2025_stm32h723zgt6_arduino\mylib\l_gui_guider\lvgl\src\misc\lv_fs_private.h
 
 c:\users\chuhong\onedrive\documents\platformio\projects\l_2025_stm32h723zgt6_arduino\mylib\l_gui_guider\lvgl\src\draw\lv_image_decoder_private.h:
 
@@ -1902,3 +1907,13 @@ c:\users\chuhong\onedrive\documents\platformio\projects\l_2025_stm32h723zgt6_ard
 c:\users\chuhong\onedrive\documents\platformio\projects\l_2025_stm32h723zgt6_arduino\mylib\l_gui_guider\lvgl\src\lv_conf_internal.h:
 
 c:\users\chuhong\onedrive\documents\platformio\projects\l_2025_stm32h723zgt6_arduino\mylib\l_gui_guider\lvgl\src/osal/lv_os_private.h:
+
+c:\users\chuhong\onedrive\documents\platformio\projects\l_2025_stm32h723zgt6_arduino\mylib\l_gui_guider\lvgl\src\libs\tjpgd\tjpgd.h:
+
+c:\users\chuhong\onedrive\documents\platformio\projects\l_2025_stm32h723zgt6_arduino\mylib\l_gui_guider\lvgl\src\lv_conf_internal.h:
+
+c:\users\chuhong\onedrive\documents\platformio\projects\l_2025_stm32h723zgt6_arduino\mylib\l_gui_guider\lvgl\src\libs\tjpgd\tjpgdcnf.h:
+
+c:\users\chuhong\onedrive\documents\platformio\projects\l_2025_stm32h723zgt6_arduino\mylib\l_gui_guider\lvgl\src\libs\tjpgd\lv_tjpgd.h:
+
+c:\users\chuhong\onedrive\documents\platformio\projects\l_2025_stm32h723zgt6_arduino\mylib\l_gui_guider\lvgl\src\misc\lv_fs_private.h:

@@ -2555,7 +2555,7 @@
     #ifdef CONFIG_LV_USE_FS_RAWFS
         #define LV_USE_FS_RAWFS CONFIG_LV_USE_FS_RAWFS
     #else
-        #define LV_USE_FS_RAWFS 0
+        #define LV_USE_FS_RAWFS 1
     #endif
 #endif
 #if LV_USE_FS_RAWFS

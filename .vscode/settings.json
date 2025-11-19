@@ -9,6 +9,14 @@
         "l_malloc1.h": "c",
         "freertosconfig_default.h": "c",
         "arduino.h": "c",
-        "custom.h": "c"
+        "custom.h": "c",
+        "atomic": "cpp",
+        "fstream": "cpp",
+        "sstream": "cpp",
+        "regex": "cpp",
+        "ff_gen_drv.h": "c",
+        "exfuns.h": "c",
+        "lv_mainstart.h": "c",
+        "lv_port_indev.h": "c"
     }
 }

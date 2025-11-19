@@ -72,7 +72,6 @@ void ui_animation(void * var, uint32_t duration, int32_t delay, int32_t start_va
 void init_scr_del_flag(lv_ui *ui)
 {
 
-    ui->screen_1_del = true;
     ui->screen_del = true;
 }
 

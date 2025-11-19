@@ -3,7 +3,7 @@
 #include "L_Serial.h"
 #include <algorithm>
 #include <SPI.h>
-#include <L_SDCARD.h>
+#include <sdmmc_sdcard.h>
 #include <lvgl.h>
 
 
@@ -21,34 +21,21 @@ namespace L_FreeRTOS
             Serial.printf("Free stack words left: %u\n", highWater);
             for(;;)
             {    
-                // if (xSemaphoreTake(Signal::mySemaphoreBinary1,portMAX_DELAY) == pdTRUE)
-                // {
-                 
                 lv_timer_handler();
-                
-                // }
-        
                 vTaskDelay(pdMS_TO_TICKS(5));
             }
 
         }
         void myTask2(void * pvParameter)
         {
-            UBaseType_t highWater = uxTaskGetStackHighWaterMark(NULL);
-            Serial.printf("Free stack words left: %u\n", highWater);
+            char buf[64];
             for(;;)
             {   
-                // if (xSemaphoreTake(Signal::mySemaphore1,portMAX_DELAY) == pdTRUE)
-                // {
-                //     Serial.println("myTask->2");
-                //     xSemaphoreGive(Signal::mySemaphore1);
-                // }
-                // if(L_Serial::mySerial2.available())
-                // {
-                //     String st = L_Serial::mySerial2.readStringUntil('\n');
-                // }
-                // myButton1.at("button1").tick();
-                vTaskDelay(pdMS_TO_TICKS(1));
+                if (xQueueReceive(Signal::myQueue2,buf,portMAX_DELAY) == pdPASS)
+                {       
+                 
+                }
+                vTaskDelay(pdMS_TO_TICKS(5));
             }
 
         }
@@ -67,7 +54,7 @@ namespace L_FreeRTOS
                 // {
                 //     String st = L_Serial::mySerial2.readStringUntil('\n');
                 // }
-                vTaskDelay(pdMS_TO_TICKS(1));
+                vTaskDelay(pdMS_TO_TICKS(5));
             }
 
         }
@@ -86,7 +73,7 @@ namespace L_FreeRTOS
                 // {
                 //     String st = L_Serial::mySerial2.readStringUntil('\n');
                 // }
-                vTaskDelay(pdMS_TO_TICKS(1));
+                vTaskDelay(pdMS_TO_TICKS(5));
             }
 
         }
@@ -118,7 +105,7 @@ namespace L_FreeRTOS
                     }
                 }
 
-                vTaskDelay(pdMS_TO_TICKS(1));
+                vTaskDelay(pdMS_TO_TICKS(5));
             }
 
         }
@@ -139,6 +126,14 @@ namespace L_FreeRTOS
                         xQueueSend(Signal::myQueue1,"Chiyo",portMAX_DELAY);
                     else if (st == "hong")
                         xQueueSend(Signal::myQueue1,"Kawaii",portMAX_DELAY);
+                    else if (st == "test w")
+                        xQueueSend(Signal::myQueue2,"test w",portMAX_DELAY);
+                    else if (st == "test r")
+                        xQueueSend(Signal::myQueue2,"test r",portMAX_DELAY);
+                    else if (st == "unmount")
+                        xQueueSend(Signal::myQueue2,"unmount",portMAX_DELAY);
+                    else if (st == "test")
+                        xQueueSend(Signal::myQueue2,"test",portMAX_DELAY);
                     else if (st == "hello there 9527")
                     {
                         Serial.println("connected to computer->");
@@ -160,7 +155,7 @@ namespace L_FreeRTOS
                 //     Serial.println("id:9527");
                 //     vTaskDelay(pdMS_TO_TICKS(100));
                 // }
-                vTaskDelay(pdMS_TO_TICKS(1));
+                vTaskDelay(pdMS_TO_TICKS(5));
             }
 
         }
@@ -178,17 +173,18 @@ namespace L_FreeRTOS
         {
             
             // Task
-            xTaskCreate(TaskManager::myTask1,"myTask1",10000,NULL,1,NULL);
-            xTaskCreate(TaskManager::myTask2,"myTask2",2048,NULL,1,NULL);
-            xTaskCreate(TaskManager::myTask3,"myTask3",2048,NULL,1,NULL);
-            xTaskCreate(TaskManager::myTask4,"myTask4",2048,NULL,1,NULL);
-            xTaskCreate(TaskManager::myTask5,"myTask5",2048,NULL,1,NULL);
-            xTaskCreate(TaskManager::myTask6,"myTask6",2048,NULL,1,NULL);
+            xTaskCreate(TaskManager::myTask1,"myTask1",20000,NULL,1,NULL);
+            xTaskCreate(TaskManager::myTask2,"myTask2",2000,NULL,2,NULL);
+            xTaskCreate(TaskManager::myTask3,"myTask3",2000,NULL,1,NULL);
+            xTaskCreate(TaskManager::myTask4,"myTask4",2000,NULL,1,NULL);
+            xTaskCreate(TaskManager::myTask5,"myTask5",2000,NULL,1,NULL);
+            xTaskCreate(TaskManager::myTask6,"myTask6",2000,NULL,1,NULL);
 
             // semaphore
             Signal::mySemaphore1 = xSemaphoreCreateMutex();
             Signal::mySemaphoreBinary1 = xSemaphoreCreateBinary();
             Signal::myQueue1 = xQueueCreate(10,sizeof(char[64]));
+            Signal::myQueue2 = xQueueCreate(10,sizeof(char[64]));
         
             
             // Timer

@@ -20,7 +20,8 @@
             "-I MALLOC11",
             "-I LED",
             "-I L_lvgl_Pro",
-            "-I L_Lvgl"
+            "-I L_Lvgl",
+            "-I L_SDMMC"
         ]
 
      

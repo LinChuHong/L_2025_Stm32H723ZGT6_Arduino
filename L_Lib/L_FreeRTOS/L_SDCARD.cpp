@@ -4,6 +4,6 @@
 
 namespace L_SDCARD
 {
-    File myFile;
-    bool isSDCardAvailable = false;
+    // File myFile;
+    // bool isSDCardAvailable = false;
 }

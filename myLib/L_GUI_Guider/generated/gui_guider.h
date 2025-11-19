@@ -19,59 +19,10 @@ extern "C" {
 typedef struct
 {
   
-	lv_obj_t *screen_1;
-	bool screen_1_del;
-	lv_obj_t *screen_1_btn_1;
-	lv_obj_t *screen_1_btn_1_label;
 	lv_obj_t *screen;
 	bool screen_del;
-	lv_obj_t *screen_btn_1;
-	lv_obj_t *screen_btn_1_label;
 	lv_obj_t *screen_btn_2;
 	lv_obj_t *screen_btn_2_label;
-	lv_obj_t *screen_btn_3;
-	lv_obj_t *screen_btn_3_label;
-	lv_obj_t *screen_btn_4;
-	lv_obj_t *screen_btn_4_label;
-	lv_obj_t *screen_btn_5;
-	lv_obj_t *screen_btn_5_label;
-	lv_obj_t *screen_btn_6;
-	lv_obj_t *screen_btn_6_label;
-	lv_obj_t *screen_btn_7;
-	lv_obj_t *screen_btn_7_label;
-	lv_obj_t *screen_btn_8;
-	lv_obj_t *screen_btn_8_label;
-	lv_obj_t *screen_btn_9;
-	lv_obj_t *screen_btn_9_label;
-	lv_obj_t *screen_btn_10;
-	lv_obj_t *screen_btn_10_label;
-	lv_obj_t *screen_btn_11;
-	lv_obj_t *screen_btn_11_label;
-	lv_obj_t *screen_btn_12;
-	lv_obj_t *screen_btn_12_label;
-	lv_obj_t *screen_btn_13;
-	lv_obj_t *screen_btn_13_label;
-	lv_obj_t *screen_btn_14;
-	lv_obj_t *screen_btn_14_label;
-	lv_obj_t *screen_btn_15;
-	lv_obj_t *screen_btn_15_label;
-	lv_obj_t *screen_btn_16;
-	lv_obj_t *screen_btn_16_label;
-	lv_obj_t *screen_btn_17;
-	lv_obj_t *screen_btn_17_label;
-	lv_obj_t *screen_btn_18;
-	lv_obj_t *screen_btn_18_label;
-	lv_obj_t *screen_btn_19;
-	lv_obj_t *screen_btn_19_label;
-	lv_obj_t *screen_btn_20;
-	lv_obj_t *screen_btn_20_label;
-	lv_obj_t *screen_btn_21;
-	lv_obj_t *screen_btn_21_label;
-	lv_obj_t *screen_btn_22;
-	lv_obj_t *screen_btn_22_label;
-	lv_obj_t *screen_led_1;
-	lv_obj_t *screen_btn_23;
-	lv_obj_t *screen_btn_23_label;
 }lv_ui;
 
 typedef void (*ui_setup_scr_t)(lv_ui * ui);
@@ -99,13 +50,9 @@ void init_keyboard(lv_ui *ui);
 extern lv_ui guider_ui;
 
 
-void setup_scr_screen_1(lv_ui *ui);
 void setup_scr_screen(lv_ui *ui);
 
-LV_FONT_DECLARE(lv_font_FontAwesome5_86)
-LV_FONT_DECLARE(lv_font_montserratMedium_16)
-LV_FONT_DECLARE(lv_font_montserratMedium_22)
-LV_FONT_DECLARE(lv_font_FontAwesome5_32)
+LV_FONT_DECLARE(lv_font_montserratMedium_46)
 
 
 #ifdef __cplusplus

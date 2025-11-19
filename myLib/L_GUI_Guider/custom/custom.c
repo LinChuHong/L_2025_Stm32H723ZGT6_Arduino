@@ -48,6 +48,6 @@ void screen_btn_22_event_handler_custom(lv_event_t * e)
 
     if(code == LV_EVENT_CLICKED)
     {
-        cpp_cb_bridge();
+        // cpp_cb_bridge();
     }
 }

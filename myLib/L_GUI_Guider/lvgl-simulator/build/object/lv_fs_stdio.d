@@ -632,7 +632,8 @@ build/object/lv_fs_stdio.o: \
  c:\users\chuhong\onedrive\documents\platformio\projects\l_2025_stm32h723zgt6_arduino\mylib\l_gui_guider\lvgl\src/libs/ffmpeg/lv_ffmpeg.h \
  c:\users\chuhong\onedrive\documents\platformio\projects\l_2025_stm32h723zgt6_arduino\mylib\l_gui_guider\lvgl\src/widgets/lottie/lv_lottie_private.h \
  c:\users\chuhong\onedrive\documents\platformio\projects\l_2025_stm32h723zgt6_arduino\mylib\l_gui_guider\lvgl\src\lv_conf_internal.h \
- c:\users\chuhong\onedrive\documents\platformio\projects\l_2025_stm32h723zgt6_arduino\mylib\l_gui_guider\lvgl\src/osal/lv_os_private.h
+ c:\users\chuhong\onedrive\documents\platformio\projects\l_2025_stm32h723zgt6_arduino\mylib\l_gui_guider\lvgl\src/osal/lv_os_private.h \
+ c:\users\chuhong\onedrive\documents\platformio\projects\l_2025_stm32h723zgt6_arduino\mylib\l_gui_guider\lvgl\src\core\lv_global.h
 
 c:\users\chuhong\onedrive\documents\platformio\projects\l_2025_stm32h723zgt6_arduino\mylib\l_gui_guider\lvgl\lvgl.h:
 
@@ -1899,3 +1900,5 @@ c:\users\chuhong\onedrive\documents\platformio\projects\l_2025_stm32h723zgt6_ard
 c:\users\chuhong\onedrive\documents\platformio\projects\l_2025_stm32h723zgt6_arduino\mylib\l_gui_guider\lvgl\src\lv_conf_internal.h:
 
 c:\users\chuhong\onedrive\documents\platformio\projects\l_2025_stm32h723zgt6_arduino\mylib\l_gui_guider\lvgl\src/osal/lv_os_private.h:
+
+c:\users\chuhong\onedrive\documents\platformio\projects\l_2025_stm32h723zgt6_arduino\mylib\l_gui_guider\lvgl\src\core\lv_global.h:

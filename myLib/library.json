@@ -10,8 +10,10 @@
             "-<L_Gui_Guider/lvgl-simulator/>",
             "-<L_Gui_Guider/temp/>",
             "-<L_2025_Stm32H723ZGT6_Cmake>",
+            "-<important_files>",
             "+<L_Gui_Guider/custom/>",
             "+<L_Gui_Guider/generated/>"
+        
 
         ],
         "flags": [

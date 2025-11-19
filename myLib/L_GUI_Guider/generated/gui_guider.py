@@ -197,42 +197,15 @@ def datetext_calendar_event_handler(e, obj):
             bg.set_style_bg_opa(lv.OPA.TRANSP, 0)
             calendar.delete()
 
-# Create screen_1
-screen_1 = lv.obj()
-screen_1.set_size(1024, 600)
-screen_1.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
-# Set style for screen_1, Part: lv.PART.MAIN, State: lv.STATE.DEFAULT.
-screen_1.set_style_bg_opa(0, lv.PART.MAIN|lv.STATE.DEFAULT)
-
-# Create screen_1_btn_1
-screen_1_btn_1 = lv.button(screen_1)
-screen_1_btn_1_label = lv.label(screen_1_btn_1)
-screen_1_btn_1_label.set_text("To Main Screen")
-screen_1_btn_1_label.set_long_mode(lv.label.LONG.SCROLL)
-screen_1_btn_1_label.set_width(lv.pct(100))
-screen_1_btn_1_label.align(lv.ALIGN.CENTER, 0, 0)
-screen_1_btn_1.set_style_pad_all(0, lv.STATE.DEFAULT)
-screen_1_btn_1.set_pos(188, 177)
-screen_1_btn_1.set_size(595, 202)
-# Set style for screen_1_btn_1, Part: lv.PART.MAIN, State: lv.STATE.DEFAULT.
-screen_1_btn_1.set_style_bg_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
-screen_1_btn_1.set_style_bg_color(lv.color_hex(0x2FDAAE), lv.PART.MAIN|lv.STATE.DEFAULT)
-screen_1_btn_1.set_style_bg_grad_dir(lv.GRAD_DIR.NONE, lv.PART.MAIN|lv.STATE.DEFAULT)
-screen_1_btn_1.set_style_border_width(0, lv.PART.MAIN|lv.STATE.DEFAULT)
-screen_1_btn_1.set_style_radius(5, lv.PART.MAIN|lv.STATE.DEFAULT)
-screen_1_btn_1.set_style_shadow_width(0, lv.PART.MAIN|lv.STATE.DEFAULT)
-screen_1_btn_1.set_style_text_color(lv.color_hex(0xffffff), lv.PART.MAIN|lv.STATE.DEFAULT)
-screen_1_btn_1.set_style_text_font(test_font("FontAwesome5", 86), lv.PART.MAIN|lv.STATE.DEFAULT)
-screen_1_btn_1.set_style_text_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
-screen_1_btn_1.set_style_text_align(lv.TEXT_ALIGN.CENTER, lv.PART.MAIN|lv.STATE.DEFAULT)
-
-screen_1.update_layout()
 # Create screen
 screen = lv.obj()
 screen.set_size(1024, 600)
 screen.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
 # Set style for screen, Part: lv.PART.MAIN, State: lv.STATE.DEFAULT.
 screen.set_style_bg_opa(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen.set_style_bg_image_src(load_image(r"C:\Users\chuhong\OneDrive\Documents\PlatformIO\Projects\L_2025_Stm32H723ZGT6_Arduino\myLib\L_GUI_Guider\generated\MicroPython\Chiyo_chan_1024_600.png"), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen.set_style_bg_image_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen.set_style_bg_image_recolor_opa(0, lv.PART.MAIN|lv.STATE.DEFAULT)
 
 # Create screen_btn_1
 screen_btn_1 = lv.button(screen)
@@ -264,7 +237,7 @@ screen_btn_2_label.set_long_mode(lv.label.LONG.WRAP)
 screen_btn_2_label.set_width(lv.pct(100))
 screen_btn_2_label.align(lv.ALIGN.CENTER, 0, 0)
 screen_btn_2.set_style_pad_all(0, lv.STATE.DEFAULT)
-screen_btn_2.set_pos(154, 115)
+screen_btn_2.set_pos(154, 114)
 screen_btn_2.set_size(100, 50)
 # Set style for screen_btn_2, Part: lv.PART.MAIN, State: lv.STATE.DEFAULT.
 screen_btn_2.set_style_bg_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
@@ -352,7 +325,7 @@ screen_btn_6_label.set_long_mode(lv.label.LONG.WRAP)
 screen_btn_6_label.set_width(lv.pct(100))
 screen_btn_6_label.align(lv.ALIGN.CENTER, 0, 0)
 screen_btn_6.set_style_pad_all(0, lv.STATE.DEFAULT)
-screen_btn_6.set_pos(863, 516)
+screen_btn_6.set_pos(863, 514)
 screen_btn_6.set_size(100, 50)
 # Set style for screen_btn_6, Part: lv.PART.MAIN, State: lv.STATE.DEFAULT.
 screen_btn_6.set_style_bg_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
@@ -374,7 +347,7 @@ screen_btn_7_label.set_long_mode(lv.label.LONG.WRAP)
 screen_btn_7_label.set_width(lv.pct(100))
 screen_btn_7_label.align(lv.ALIGN.CENTER, 0, 0)
 screen_btn_7.set_style_pad_all(0, lv.STATE.DEFAULT)
-screen_btn_7.set_pos(71, 465)
+screen_btn_7.set_pos(71, 464)
 screen_btn_7.set_size(100, 50)
 # Set style for screen_btn_7, Part: lv.PART.MAIN, State: lv.STATE.DEFAULT.
 screen_btn_7.set_style_bg_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
@@ -747,19 +720,114 @@ screen_btn_23.set_style_text_font(test_font("montserratMedium", 16), lv.PART.MAI
 screen_btn_23.set_style_text_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
 screen_btn_23.set_style_text_align(lv.TEXT_ALIGN.CENTER, lv.PART.MAIN|lv.STATE.DEFAULT)
 
-screen.update_layout()
+# Create screen_label_1
+screen_label_1 = lv.label(screen)
+screen_label_1.set_text("Label")
+screen_label_1.set_long_mode(lv.label.LONG.WRAP)
+screen_label_1.set_width(lv.pct(100))
+screen_label_1.set_pos(588, 38)
+screen_label_1.set_size(141, 47)
+# Set style for screen_label_1, Part: lv.PART.MAIN, State: lv.STATE.DEFAULT.
+screen_label_1.set_style_border_width(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_label_1.set_style_radius(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_label_1.set_style_text_color(lv.color_hex(0x000000), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_label_1.set_style_text_font(test_font("montserratMedium", 16), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_label_1.set_style_text_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_label_1.set_style_text_letter_space(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_label_1.set_style_text_line_space(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_label_1.set_style_text_align(lv.TEXT_ALIGN.CENTER, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_label_1.set_style_bg_opa(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_label_1.set_style_pad_top(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_label_1.set_style_pad_right(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_label_1.set_style_pad_bottom(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_label_1.set_style_pad_left(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_label_1.set_style_shadow_width(0, lv.PART.MAIN|lv.STATE.DEFAULT)
 
-def screen_1_btn_1_event_handler(e):
-    code = e.get_code()
-    if (code == lv.EVENT.CLICKED):
-        pass
-        lv.screen_load_anim(screen, lv.SCR_LOAD_ANIM.FADE_ON, 200, 200, False)
-screen_1_btn_1.add_event_cb(lambda e: screen_1_btn_1_event_handler(e), lv.EVENT.ALL, None)
+screen.update_layout()
+# Create screen_1
+screen_1 = lv.obj()
+screen_1.set_size(1024, 600)
+screen_1.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
+# Set style for screen_1, Part: lv.PART.MAIN, State: lv.STATE.DEFAULT.
+screen_1.set_style_bg_opa(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_1.set_style_bg_image_src(load_image(r"C:\Users\chuhong\OneDrive\Documents\PlatformIO\Projects\L_2025_Stm32H723ZGT6_Arduino\myLib\L_GUI_Guider\generated\MicroPython\Chiyo_chan_1024_600.png"), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_1.set_style_bg_image_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_1.set_style_bg_image_recolor_opa(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+
+# Create screen_1_btn_1
+screen_1_btn_1 = lv.button(screen_1)
+screen_1_btn_1_label = lv.label(screen_1_btn_1)
+screen_1_btn_1_label.set_text("Chiyo-chan and Osaka-chan")
+screen_1_btn_1_label.set_long_mode(lv.label.LONG.SCROLL)
+screen_1_btn_1_label.set_width(lv.pct(100))
+screen_1_btn_1_label.align(lv.ALIGN.CENTER, 0, 0)
+screen_1_btn_1.set_style_pad_all(0, lv.STATE.DEFAULT)
+screen_1_btn_1.set_pos(28, 0)
+screen_1_btn_1.set_size(967, 149)
+# Set style for screen_1_btn_1, Part: lv.PART.MAIN, State: lv.STATE.DEFAULT.
+screen_1_btn_1.set_style_bg_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_1_btn_1.set_style_bg_color(lv.color_hex(0x2FDAAE), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_1_btn_1.set_style_bg_grad_dir(lv.GRAD_DIR.NONE, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_1_btn_1.set_style_border_width(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_1_btn_1.set_style_radius(5, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_1_btn_1.set_style_shadow_width(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_1_btn_1.set_style_text_color(lv.color_hex(0xffffff), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_1_btn_1.set_style_text_font(test_font("FontAwesome5", 86), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_1_btn_1.set_style_text_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_1_btn_1.set_style_text_align(lv.TEXT_ALIGN.CENTER, lv.PART.MAIN|lv.STATE.DEFAULT)
+
+# Create screen_1_btn_2
+screen_1_btn_2 = lv.button(screen_1)
+screen_1_btn_2_label = lv.label(screen_1_btn_2)
+screen_1_btn_2_label.set_text("Chiyo-chan and Osaka-chan")
+screen_1_btn_2_label.set_long_mode(lv.label.LONG.SCROLL)
+screen_1_btn_2_label.set_width(lv.pct(100))
+screen_1_btn_2_label.align(lv.ALIGN.CENTER, 0, 0)
+screen_1_btn_2.set_style_pad_all(0, lv.STATE.DEFAULT)
+screen_1_btn_2.set_pos(28, 451)
+screen_1_btn_2.set_size(967, 149)
+# Set style for screen_1_btn_2, Part: lv.PART.MAIN, State: lv.STATE.DEFAULT.
+screen_1_btn_2.set_style_bg_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_1_btn_2.set_style_bg_color(lv.color_hex(0x2FDAAE), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_1_btn_2.set_style_bg_grad_dir(lv.GRAD_DIR.NONE, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_1_btn_2.set_style_border_width(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_1_btn_2.set_style_radius(5, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_1_btn_2.set_style_shadow_width(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_1_btn_2.set_style_text_color(lv.color_hex(0xffffff), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_1_btn_2.set_style_text_font(test_font("FontAwesome5", 86), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_1_btn_2.set_style_text_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_1_btn_2.set_style_text_align(lv.TEXT_ALIGN.CENTER, lv.PART.MAIN|lv.STATE.DEFAULT)
+
+# Create screen_1_btn_3
+screen_1_btn_3 = lv.button(screen_1)
+screen_1_btn_3_label = lv.label(screen_1_btn_3)
+screen_1_btn_3_label.set_text("Chiyo-chan and Osaka-chan")
+screen_1_btn_3_label.set_long_mode(lv.label.LONG.SCROLL)
+screen_1_btn_3_label.set_width(lv.pct(100))
+screen_1_btn_3_label.align(lv.ALIGN.CENTER, 0, 0)
+screen_1_btn_3.set_style_pad_all(0, lv.STATE.DEFAULT)
+screen_1_btn_3.set_pos(23, 225)
+screen_1_btn_3.set_size(967, 149)
+# Set style for screen_1_btn_3, Part: lv.PART.MAIN, State: lv.STATE.DEFAULT.
+screen_1_btn_3.set_style_bg_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_1_btn_3.set_style_bg_color(lv.color_hex(0x2FDAAE), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_1_btn_3.set_style_bg_grad_dir(lv.GRAD_DIR.NONE, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_1_btn_3.set_style_border_width(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_1_btn_3.set_style_radius(5, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_1_btn_3.set_style_shadow_width(0, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_1_btn_3.set_style_text_color(lv.color_hex(0xffffff), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_1_btn_3.set_style_text_font(test_font("FontAwesome5", 86), lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_1_btn_3.set_style_text_opa(255, lv.PART.MAIN|lv.STATE.DEFAULT)
+screen_1_btn_3.set_style_text_align(lv.TEXT_ALIGN.CENTER, lv.PART.MAIN|lv.STATE.DEFAULT)
+
+screen_1.update_layout()
 
 def screen_event_handler(e):
     code = e.get_code()
-    if (code == lv.EVENT.CLICKED):
+    if (code == lv.EVENT.SCREEN_LOADED):
         pass
+        
+
 screen.add_event_cb(lambda e: screen_event_handler(e), lv.EVENT.ALL, None)
 
 def screen_btn_1_event_handler(e):
@@ -778,7 +846,7 @@ def screen_btn_7_event_handler(e):
     code = e.get_code()
     if (code == lv.EVENT.CLICKED):
         pass
-        lv.screen_load_anim(screen_1, lv.SCR_LOAD_ANIM.FADE_ON, 200, 200, False)
+        lv.screen_load_anim(screen_1, lv.SCR_LOAD_ANIM.OVER_BOTTOM, 200, 200, False)
 screen_btn_7.add_event_cb(lambda e: screen_btn_7_event_handler(e), lv.EVENT.ALL, None)
 
 def screen_btn_8_event_handler(e):
@@ -801,6 +869,13 @@ def screen_btn_22_event_handler(e):
         
 
 screen_btn_22.add_event_cb(lambda e: screen_btn_22_event_handler(e), lv.EVENT.ALL, None)
+
+def screen_1_btn_1_event_handler(e):
+    code = e.get_code()
+    if (code == lv.EVENT.CLICKED):
+        pass
+        lv.screen_load_anim(screen, lv.SCR_LOAD_ANIM.FADE_ON, 200, 200, False)
+screen_1_btn_1.add_event_cb(lambda e: screen_1_btn_1_event_handler(e), lv.EVENT.ALL, None)
 
 # content from custom.py
 

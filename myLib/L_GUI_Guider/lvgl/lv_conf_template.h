@@ -766,7 +766,7 @@
 #endif
 
 /*API for RAWFS (needs to be added separately).*/
-#define LV_USE_FS_RAWFS 0
+#define LV_USE_FS_RAWFS 1
 #if LV_USE_FS_RAWFS
     #define LV_FS_RAWFS_LETTER '\0'     /*Set an upper cased letter on which the drive will accessible (e.g. 'A')*/
     #define LV_FS_RAWFS_XIP 0
