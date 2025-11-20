@@ -15,27 +15,38 @@
 #include <lvgl.h>
 #include <lv_port_disp.h>
 #include <lv_port_indev.h>
-// #include <lv_port_fs.h>
 #include <L_FreeRTOS.h>
 #include <map>
 #include <string>
 #include <hello.h>
 #include <sdmmc_sdcard.h>
 #include <lvgl_demo.h>
+#include <ui.h>
 std::map<std::string, OneButton> myButton1;
 HardwareTimer mytimer(TIM6);
+
+#include <mergeBinFile.h>
+
+
+uint8_t mydata = 0;
+
+
+
 
 
 void setup() 
 {
     Serial.begin(115200);
+    // norflash_init();
+    // norflash_read(&mydata, 0, sizeof(mydata));
+    // Serial.println("norflash read data: " + String(mydata));
     sys_cache_enable();                     /* 使能L1-Cache */
     delay_init(520);                        /* 延时初始化 */
     led_init();                             /* 初始化LED */
     mpu_memory_protection();                /* 保护相关存储区域 */
     sdram_init();                           /* 初始化SDRAM */
     lcd_init();                             /* 初始化LCD */
-    sd_init();
+    // // sd_init();
     
     my_mem_init(SRAMIN);                    /* 初始化内部内存池(AXI) */
     my_mem_init(SRAMEX);                    /* 初始化外部内存池(SDRAM) */
@@ -45,8 +56,9 @@ void setup()
 	lv_init();                              /* lvgl系统初始化 */
     lv_port_disp_init();                    /* lvgl显示接口初始化,放在lv_init()的后面 */
     lv_port_indev_init();                   /* lvgl输入接口初始化,放在lv_init()的后面 */
-    
+    // ui_init(NULL);
     custom_init();
+    
     
     mytimer.setOverflow(1000,MICROSEC_FORMAT);
     mytimer.attachInterrupt( [] { lv_tick_inc(1); myButton1.at("button1").tick(); } );
@@ -57,9 +69,9 @@ void setup()
     myButton1.at("button1").attachPress( [] {  } );
     
     
-    lvgl_demo();
+    // lvgl_demo();
     
-    // L_FreeRTOS::SetUp::setup();
+    L_FreeRTOS::SetUp::setup();
 }
 
 void loop() { }

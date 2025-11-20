@@ -18,6 +18,7 @@
 
 #include "lvgl.h"
 #include "lv_mainstart.h"
+#include "lv_mainstart1.h"
 #include "lv_port_disp.h"
 #include "lv_port_indev.h"
 #include <diskio.h>
@@ -50,13 +51,15 @@ TaskHandle_t LEDTask_Handler;           /* 任务句柄 */
 void led_task(void *pvParameters);      /* 任务函数 */
 
 /******************************************************************************************************/
-
+#include <custom.h>
 
 void lvgl_demo(void)
 {
     lv_init();                                          /* lvgl系统初始化 */
     lv_port_disp_init();                                /* lvgl显示接口初始化,放在lv_init()的后面 */
     lv_port_indev_init();                               /* lvgl输入接口初始化,放在lv_init()的后面 */
+    // custom_init();
+
 
     xTaskCreate((TaskFunction_t )start_task,            /* 任务函数 */
                 (const char*    )"start_task",          /* 任务名称 */
@@ -104,7 +107,7 @@ void start_task(void *pvParameters)
  */
 void lv_demo_task(void *pvParameters)
 {
-    lv_mainstart();  /* 测试的demo */
+    lv_mainstart1();  /* 测试的demo */
     
     while(1)
     {

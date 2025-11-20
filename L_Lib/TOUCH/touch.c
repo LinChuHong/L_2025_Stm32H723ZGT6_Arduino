@@ -566,7 +566,7 @@ uint8_t tp_init(void)
     HAL_GPIO_Init(T_CS_GPIO_PORT, &gpio_init_struct);        /* 初始化T_CS引脚 */
 
     tp_read_xy(&tp_dev.x[0], &tp_dev.y[0]);                  /* 第一次读取初始化 */
-    norflash_init();                                         /* 初始化NORFLASH */
+    // norflash_init();                                         /* 初始化NORFLASH */
 
     if (tp_get_adjust_data())
     {

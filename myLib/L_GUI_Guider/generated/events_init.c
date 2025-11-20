@@ -16,6 +16,9 @@
 #endif
 
 #include <lvgl.h>
+#include <custom.h>
+#include <lvgl.h>
+#include <custom_events_cb.h>
 
 static void screen_event_handler (lv_event_t *e)
 {
@@ -31,9 +34,49 @@ static void screen_event_handler (lv_event_t *e)
     }
 }
 
+static void screen_btn_2_event_handler (lv_event_t *e)
+{
+    lv_event_code_t code = lv_event_get_code(e);
+    switch (code) {
+    case LV_EVENT_PRESSED:
+    {
+        mycb(e);
+        break;
+    }
+    case LV_EVENT_PRESSING:
+    {
+        mycb(e);
+        break;
+    }
+    default:
+        break;
+    }
+}
+
+static void screen_btn_3_event_handler (lv_event_t *e)
+{
+    lv_event_code_t code = lv_event_get_code(e);
+    switch (code) {
+    case LV_EVENT_PRESSED:
+    {
+        mycb(e);
+        break;
+    }
+    case LV_EVENT_PRESSING:
+    {
+        mycb(e);
+        break;
+    }
+    default:
+        break;
+    }
+}
+
 void events_init_screen (lv_ui *ui)
 {
     lv_obj_add_event_cb(ui->screen, screen_event_handler, LV_EVENT_ALL, ui);
+    lv_obj_add_event_cb(ui->screen_btn_2, screen_btn_2_event_handler, LV_EVENT_ALL, ui);
+    lv_obj_add_event_cb(ui->screen_btn_3, screen_btn_3_event_handler, LV_EVENT_ALL, ui);
 }
 
 

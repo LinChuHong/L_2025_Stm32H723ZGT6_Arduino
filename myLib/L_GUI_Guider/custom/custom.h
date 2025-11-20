@@ -19,10 +19,10 @@ extern "C" {
 #include "gui_guider.h"
 extern lv_ui guider_ui;
 #define LV_ATTRIBUTE_MEM_SDRAM  __attribute__((section(".sdram")))
+void mycb(lv_event_t * e);
 
 void custom_init();
 void screen_btn_22_event_handler_custom(lv_event_t * e);
-
 
 #ifdef __cplusplus
 }

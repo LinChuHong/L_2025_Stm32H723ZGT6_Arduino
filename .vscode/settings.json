@@ -17,6 +17,7 @@
         "ff_gen_drv.h": "c",
         "exfuns.h": "c",
         "lv_mainstart.h": "c",
-        "lv_port_indev.h": "c"
+        "lv_port_indev.h": "c",
+        "lv_global.h": "c"
     }
 }

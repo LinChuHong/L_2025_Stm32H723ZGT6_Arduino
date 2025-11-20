@@ -35,10 +35,10 @@ void setup_scr_screen(lv_ui *ui)
 
     //Write codes screen_btn_2
     ui->screen_btn_2 = lv_button_create(ui->screen);
-    lv_obj_set_pos(ui->screen_btn_2, 70, 53);
+    lv_obj_set_pos(ui->screen_btn_2, 13, 16);
     lv_obj_set_size(ui->screen_btn_2, 271, 128);
     ui->screen_btn_2_label = lv_label_create(ui->screen_btn_2);
-    lv_label_set_text(ui->screen_btn_2_label, "Button");
+    lv_label_set_text(ui->screen_btn_2_label, "");
     lv_label_set_long_mode(ui->screen_btn_2_label, LV_LABEL_LONG_SCROLL_CIRCULAR);
     lv_obj_align(ui->screen_btn_2_label, LV_ALIGN_CENTER, 0, 0);
     lv_obj_set_style_pad_all(ui->screen_btn_2, 0, LV_STATE_DEFAULT);
@@ -51,21 +51,67 @@ void setup_scr_screen(lv_ui *ui)
     lv_obj_set_style_border_width(ui->screen_btn_2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_radius(ui->screen_btn_2, 5, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_shadow_width(ui->screen_btn_2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+#if LV_USE_GUIDER_SIMULATOR
+    lv_obj_set_style_bg_image_src(ui->screen_btn_2, "C:\\Users\\chuhong\\OneDrive\\Documents\\PlatformIO\\Projects\\L_2025_Stm32H723ZGT6_Arduino\\myLib\\L_GUI_Guider\\import\\image\\IMG_2066.JPG", LV_PART_MAIN|LV_STATE_DEFAULT);
+#else
+    lv_obj_set_style_bg_image_src(ui->screen_btn_2, "F:/IMG_2066.bin", LV_PART_MAIN|LV_STATE_DEFAULT);
+#endif
+    lv_obj_set_style_bg_image_opa(ui->screen_btn_2, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_image_recolor_opa(ui->screen_btn_2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_color(ui->screen_btn_2, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_font(ui->screen_btn_2, &lv_font_montserratMedium_46, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_opa(ui->screen_btn_2, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_align(ui->screen_btn_2, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
 
+    //Write codes screen_img_1
+    ui->screen_img_1 = lv_image_create(ui->screen);
+    lv_obj_set_pos(ui->screen_img_1, 838, 94);
+    lv_obj_set_size(ui->screen_img_1, 158, 149);
+    lv_obj_add_flag(ui->screen_img_1, LV_OBJ_FLAG_CLICKABLE);
+#if LV_USE_GUIDER_SIMULATOR
+    lv_image_set_src(ui->screen_img_1, "C:\\Users\\chuhong\\OneDrive\\Documents\\PlatformIO\\Projects\\L_2025_Stm32H723ZGT6_Arduino\\myLib\\L_GUI_Guider\\import\\image\\IMG_2066.JPG");
+#else
+    lv_image_set_src(ui->screen_img_1, "F:/IMG_2066.bin");
+#endif
+    lv_image_set_pivot(ui->screen_img_1, 50,50);
+    lv_image_set_rotation(ui->screen_img_1, 0);
+
+    //Write style for screen_img_1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+    lv_obj_set_style_image_recolor_opa(ui->screen_img_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_image_opa(ui->screen_img_1, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+    //Write codes screen_btn_3
+    ui->screen_btn_3 = lv_button_create(ui->screen);
+    lv_obj_set_pos(ui->screen_btn_3, 330, 46);
+    lv_obj_set_size(ui->screen_btn_3, 187, 151);
+    ui->screen_btn_3_label = lv_label_create(ui->screen_btn_3);
+    lv_label_set_text(ui->screen_btn_3_label, "");
+    lv_label_set_long_mode(ui->screen_btn_3_label, LV_LABEL_LONG_WRAP);
+    lv_obj_align(ui->screen_btn_3_label, LV_ALIGN_CENTER, 0, 0);
+    lv_obj_set_style_pad_all(ui->screen_btn_3, 0, LV_STATE_DEFAULT);
+    lv_obj_set_width(ui->screen_btn_3_label, LV_PCT(100));
+
+    //Write style for screen_btn_3, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+    lv_obj_set_style_bg_opa(ui->screen_btn_3, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_color(ui->screen_btn_3, lv_color_hex(0x2195f6), LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_grad_dir(ui->screen_btn_3, LV_GRAD_DIR_NONE, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_border_width(ui->screen_btn_3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_radius(ui->screen_btn_3, 5, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_shadow_width(ui->screen_btn_3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+#if LV_USE_GUIDER_SIMULATOR
+    lv_obj_set_style_bg_image_src(ui->screen_btn_3, "C:\\Users\\chuhong\\OneDrive\\Documents\\PlatformIO\\Projects\\L_2025_Stm32H723ZGT6_Arduino\\myLib\\L_GUI_Guider\\import\\image\\dmsler.png", LV_PART_MAIN|LV_STATE_DEFAULT);
+#else
+    lv_obj_set_style_bg_image_src(ui->screen_btn_3, "F:/dmsler.bin", LV_PART_MAIN|LV_STATE_DEFAULT);
+#endif
+    lv_obj_set_style_bg_image_opa(ui->screen_btn_3, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_image_recolor_opa(ui->screen_btn_3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_color(ui->screen_btn_3, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_font(ui->screen_btn_3, &lv_font_montserratMedium_46, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_opa(ui->screen_btn_3, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_align(ui->screen_btn_3, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
+
     //The custom code of screen.
-    /* 初始化 JPEG 解码器 */
-    lv_tjpgd_init();
-    /* 创建 image 控件 */
-    lv_obj_t *img = lv_img_create(lv_scr_act());
-    /* 设置图像源 */
-    // lv_img_set_src(img, "S:/PICTURE/JPEG/Mini GD32.jpg");
-    lv_img_set_src(img, "S:/PICTURE/JPEG/Chiyochan.jpg");
-    /* 中间对齐 */
-    lv_obj_align(img, LV_ALIGN_CENTER, 0, 0);
+
 
     //Update current screen layout.
     lv_obj_update_layout(ui->screen);

@@ -466,7 +466,7 @@
 #define LV_USE_OBJ_ID           0
 
 /** 启用部件名称支持 */
-#define LV_USE_OBJ_NAME         0
+#define LV_USE_OBJ_NAME         1
 
 /** 创建 obj 时自动分配 ID */
 #define LV_OBJ_ID_AUTO_ASSIGN   LV_USE_OBJ_ID
@@ -860,6 +860,13 @@
     #define LV_FS_FATFS_CACHE_SIZE 0    /**< >0 以在 lv_fs_read() 中缓存此字节数 */
 #endif
 
+/*API for RAWFS (needs to be added separately).*/
+#define LV_USE_FS_RAWFS 1
+#if LV_USE_FS_RAWFS
+/*Set an upper cased letter on which the drive will accessible (e.g. 'A')*/
+#define LV_FS_RAWFS_LETTER 'F'
+#endif
+
 /** 内存映射文件访问的 API */
 #define LV_USE_FS_MEMFS 0
 #if LV_USE_FS_MEMFS
@@ -900,7 +907,7 @@
 #define LV_USE_LIBPNG 0
 
 /** BMP 解码库 */
-#define LV_USE_BMP 0
+#define LV_USE_BMP 1
 
 /** JPG + 拆分 JPG 解码库
  *  拆分 JPG 是为嵌入式系统优化的自定义格式 */
@@ -911,10 +918,10 @@
 #define LV_USE_LIBJPEG_TURBO 0
 
 /** GIF 解码库 */
-#define LV_USE_GIF 0
+#define LV_USE_GIF 1
 #if LV_USE_GIF
     /** GIF 解码加速 */
-    #define LV_GIF_CACHE_DECODE_DATA 0
+    #define LV_GIF_CACHE_DECODE_DATA 1
 #endif
 
 
@@ -1002,7 +1009,7 @@
 
     /** 1: 显示 CPU 使用率和 FPS 计数
      *  - 要求 `LV_USE_SYSMON = 1` */
-    #define LV_USE_PERF_MONITOR 0
+    #define LV_USE_PERF_MONITOR 1
     #if LV_USE_PERF_MONITOR
         #define LV_USE_PERF_MONITOR_POS LV_ALIGN_BOTTOM_RIGHT
 
@@ -1013,7 +1020,7 @@
     /** 1: 显示已用内存和内存碎片
      *     - 要求 `LV_USE_STDLIB_MALLOC = LV_STDLIB_BUILTIN`
      *     - 要求 `LV_USE_SYSMON = 1`*/
-    #define LV_USE_MEM_MONITOR 0
+    #define LV_USE_MEM_MONITOR 1
     #if LV_USE_MEM_MONITOR
         #define LV_USE_MEM_MONITOR_POS LV_ALIGN_BOTTOM_LEFT
     #endif

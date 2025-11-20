@@ -9,16 +9,14 @@
 
 #ifndef __CUSTOM_EVENTS_H_
 #define __CUSTOM_EVENTS_H_
-
+#define USEMYCBINC 1
+#define USEMYCBINCPP 0
 
 
 
 #ifdef __cplusplus
 extern "C" {
 #endif
-
-
-void cpp_cb_bridge();
 
 
 #ifdef __cplusplus

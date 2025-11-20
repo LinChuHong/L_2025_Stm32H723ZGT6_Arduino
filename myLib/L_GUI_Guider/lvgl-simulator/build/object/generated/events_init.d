@@ -634,7 +634,10 @@ build/object/generated/events_init.o: \
  c:\users\chuhong\onedrive\documents\platformio\projects\l_2025_stm32h723zgt6_arduino\mylib\l_gui_guider\lvgl\src/libs/ffmpeg/lv_ffmpeg.h \
  c:\users\chuhong\onedrive\documents\platformio\projects\l_2025_stm32h723zgt6_arduino\mylib\l_gui_guider\lvgl\src/widgets/lottie/lv_lottie_private.h \
  c:\users\chuhong\onedrive\documents\platformio\projects\l_2025_stm32h723zgt6_arduino\mylib\l_gui_guider\lvgl\src\lv_conf_internal.h \
- c:\users\chuhong\onedrive\documents\platformio\projects\l_2025_stm32h723zgt6_arduino\mylib\l_gui_guider\lvgl\src/osal/lv_os_private.h
+ c:\users\chuhong\onedrive\documents\platformio\projects\l_2025_stm32h723zgt6_arduino\mylib\l_gui_guider\lvgl\src/osal/lv_os_private.h \
+ c:\users\chuhong\onedrive\documents\platformio\projects\l_2025_stm32h723zgt6_arduino\mylib\l_gui_guider\custom\custom.h \
+ c:\users\chuhong\onedrive\documents\platformio\projects\l_2025_stm32h723zgt6_arduino\mylib\l_gui_guider\generated\gui_guider.h \
+ c:\users\chuhong\onedrive\documents\platformio\projects\l_2025_stm32h723zgt6_arduino\mylib\l_gui_guider\custom\custom_events_cb.h
 
 c:\users\chuhong\onedrive\documents\platformio\projects\l_2025_stm32h723zgt6_arduino\mylib\l_gui_guider\generated\events_init.h:
 
@@ -1905,3 +1908,9 @@ c:\users\chuhong\onedrive\documents\platformio\projects\l_2025_stm32h723zgt6_ard
 c:\users\chuhong\onedrive\documents\platformio\projects\l_2025_stm32h723zgt6_arduino\mylib\l_gui_guider\lvgl\src\lv_conf_internal.h:
 
 c:\users\chuhong\onedrive\documents\platformio\projects\l_2025_stm32h723zgt6_arduino\mylib\l_gui_guider\lvgl\src/osal/lv_os_private.h:
+
+c:\users\chuhong\onedrive\documents\platformio\projects\l_2025_stm32h723zgt6_arduino\mylib\l_gui_guider\custom\custom.h:
+
+c:\users\chuhong\onedrive\documents\platformio\projects\l_2025_stm32h723zgt6_arduino\mylib\l_gui_guider\generated\gui_guider.h:
+
+c:\users\chuhong\onedrive\documents\platformio\projects\l_2025_stm32h723zgt6_arduino\mylib\l_gui_guider\custom\custom_events_cb.h:
