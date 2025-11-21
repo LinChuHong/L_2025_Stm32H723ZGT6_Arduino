@@ -73,8 +73,8 @@ static void lv_fs_test(void)
  */
 void lv_mainstart1(void)
 {
-    lv_obj_t *label = lv_label_create(lv_scr_act());
-    lv_label_set_text(label, "FATFS TEST");
-    lv_obj_center(label);
+    // lv_obj_t *label = lv_label_create(lv_scr_act());
+    // lv_label_set_text(label, "FATFS TEST");
+    // lv_obj_center(label);
     lv_fs_test();
 }

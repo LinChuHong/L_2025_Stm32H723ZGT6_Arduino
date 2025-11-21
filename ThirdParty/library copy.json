@@ -1,0 +1,28 @@
+{
+    "name": "ThirdParty",
+    "version": "1.0.0",
+    "build": {
+      "includeDir": ".",
+      "srcFilter": [
+            "-<FATFS/documents/>",
+            "+<FATFS/exfuns/>",
+            "+<FATFS/source/>",
+            "+<USB/USB_APP/>",
+            "+<USB/STM32_USB_Device_Library/Core>",
+            "+<USB/STM32_USB_Device_Library/Class/CDC>"
+
+        ],
+      "flags": [
+            "-I FATFS/source",
+            "-I FATFS/exfuns",
+            "-I FATFS",
+            "-I USB/USB_APP",
+            "-I USB/STM32_USB_Device_Library/Core",
+            "-I USB/STM32_USB_Device_Library/Class/CDC"
+            
+
+        ]
+
+     
+    }
+}

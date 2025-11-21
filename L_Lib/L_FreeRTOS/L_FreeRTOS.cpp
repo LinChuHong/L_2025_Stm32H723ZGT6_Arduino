@@ -5,7 +5,8 @@
 #include <SPI.h>
 #include <sdmmc_sdcard.h>
 #include <lvgl.h>
-
+#include <lv_mainstart1.h>
+#include <USBSerial.h>
 
 #include <map>
 #include <string>
@@ -17,8 +18,7 @@ namespace L_FreeRTOS
     {
         void myTask1(void * pvParameter)
         {
-            UBaseType_t highWater = uxTaskGetStackHighWaterMark(NULL);
-            Serial.printf("Free stack words left: %u\n", highWater);
+         
             for(;;)
             {    
                 lv_timer_handler();
@@ -29,10 +29,17 @@ namespace L_FreeRTOS
         void myTask2(void * pvParameter)
         {
             char buf[64];
+            // SerialUSB.begin();
             for(;;)
             {   
                 if (xQueueReceive(Signal::myQueue2,buf,portMAX_DELAY) == pdPASS)
                 {       
+                    if (strcmp(buf,"test") == 0)
+                    {
+                        // SerialUSB.println("hello, world");
+                    }
+                    
+
                  
                 }
                 vTaskDelay(pdMS_TO_TICKS(5));
@@ -41,8 +48,8 @@ namespace L_FreeRTOS
         }
         void myTask3(void * pvParameter)
         {
-            UBaseType_t highWater = uxTaskGetStackHighWaterMark(NULL);
-            Serial.printf("Free stack words left: %u\n", highWater);
+            // UBaseType_t highWater = uxTaskGetStackHighWaterMark(NULL);
+            // Serial.printf("Free stack words left: %u\n", highWater);
             for(;;)
             {   
                 // if (xSemaphoreTake(Signal::mySemaphore1,portMAX_DELAY) == pdTRUE)
@@ -60,8 +67,7 @@ namespace L_FreeRTOS
         }
         void myTask4(void * pvParameter)
         {
-            UBaseType_t highWater = uxTaskGetStackHighWaterMark(NULL);
-            Serial.printf("Free stack words left: %u\n", highWater);
+     
             for(;;)
             {   
                 // if (xSemaphoreTake(Signal::mySemaphore1,portMAX_DELAY) == pdTRUE)
@@ -79,8 +85,7 @@ namespace L_FreeRTOS
         }
         void myTask5(void * pvParameter)
         {
-            UBaseType_t highWater = uxTaskGetStackHighWaterMark(NULL);
-            Serial.printf("Free stack words left: %u\n", highWater);
+
             char buf[64];
             std::vector<std::string> vst;
             for(;;)
@@ -111,8 +116,6 @@ namespace L_FreeRTOS
         }
         void myTask6(void * pvParameter)
         {
-            UBaseType_t highWater = uxTaskGetStackHighWaterMark(NULL);
-            Serial.printf("Free stack words left: %u\n", highWater);
 
             bool connectToComputer = false;
             for(;;)
@@ -173,7 +176,7 @@ namespace L_FreeRTOS
         {
             
             // Task
-            xTaskCreate(TaskManager::myTask1,"myTask1",20000,NULL,1,NULL);
+            xTaskCreate(TaskManager::myTask1,"myTask1",2000,NULL,1,NULL);
             xTaskCreate(TaskManager::myTask2,"myTask2",2000,NULL,2,NULL);
             xTaskCreate(TaskManager::myTask3,"myTask3",2000,NULL,1,NULL);
             xTaskCreate(TaskManager::myTask4,"myTask4",2000,NULL,1,NULL);

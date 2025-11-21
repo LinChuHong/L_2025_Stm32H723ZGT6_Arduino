@@ -3,15 +3,18 @@
     "version": "1.0.0",
     "build": {
       "includeDir": ".",
-              "srcFilter": [
+      "srcFilter": [
             "-<FATFS/documents/>",
             "+<FATFS/exfuns/>",
             "+<FATFS/source/>"
+
         ],
       "flags": [
             "-I FATFS/source",
             "-I FATFS/exfuns",
             "-I FATFS"
+            
+
         ]
 
      
